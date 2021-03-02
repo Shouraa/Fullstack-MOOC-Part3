@@ -1,5 +1,17 @@
-DELETE http://localhost:3001/api/persons/
+DELETE http://localhost:3001/api/persons/1
 
 ####
 
 GET http://localhost:3001/api/persons
+
+####
+
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "name": "Anton Richman",
+    "number": "39-23-6423122",
+}
+
+
