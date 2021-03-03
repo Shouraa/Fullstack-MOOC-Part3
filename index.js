@@ -12,6 +12,7 @@ app.use(
   morgan(":method :url :res[content-length] - :response-time ms :post-method")
 );
 app.use(cors());
+app.use(express.static("build"));
 
 let persons = [
   {
