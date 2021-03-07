@@ -1,17 +1,25 @@
-DELETE http://localhost:3001/api/persons/1
+DELETE http://localhost:3001/api/persons/6043c2508287189c0d4baf1e
 
-####
+###
 
 GET http://localhost:3001/api/persons
 
-####
+###
 
 POST http://localhost:3001/api/persons
 Content-Type: application/json
 
 {   
-    "name": "Richard",
+    "name": "Philip Glass",
     "number": "555"
  }
 
+###
 
+PUT http://localhost:3001/api/persons/604513a09bd23499031aa05c
+Content-Type: application/json
+
+{   
+    "name": "Philip Glass",
+    "number": "88888888888888"
+ }
