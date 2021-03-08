@@ -18,11 +18,11 @@ app.use(cors());
 app.use(express.static("build"));
 
 /* An infoPage */
-const infoPage = () => {
-  return `<div><p>Phonebook has info for ${
-    persons.length
-  } people</p><p>${new Date()}</p></div>`;
-};
+// const infoPage = () => {
+//   return `<div><p>Phonebook has info for ${
+//     persons.length
+//   } people</p><p>${new Date()}</p></div>`;
+// };
 
 /* GET request to the root */
 app.get("/", (request, response) => {
@@ -57,7 +57,7 @@ app.get("/api/persons/:id", (request, response) => {
 app.delete("/api/persons/:id", (request, response, next) => {
   const id = request.params.id;
   Person.findByIdAndRemove(id)
-    .then((result) => {
+    .then(() => {
       response.status(204).end();
     })
     .catch((error) => next(error));
@@ -69,7 +69,7 @@ app.post("/api/persons", (request, response, next) => {
 
   if (!body.name || !body.number) {
     return response.status(400).json({
-      error: `Name and/or number is missing`,
+      error: "Name and/or number is missing",
     });
   }
 
